@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iglesia del Nazareno Belén</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="canciones.html">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav>
+            <button id="hamburger-btn" aria-label="Abrir menú">☰</button>
+            <ul id="menu" class="hidden">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#programa">Programa</a></li>
+                <li><a href="#anuncios">Anuncios</a></li>
+                <li><a href="#acerca">Acerca de Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="canciones.html">canciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Página Principal con la imagen de la iglesia -->
+    <section id="inicio" class="pantalla-inicio">
+        <img src="imagenes pantalla inicio/belen.jpg" alt="Iglesia del Nazareno Belén" class="imagen-iglesia">
+    </section>
+
+    <!-- Contenido Principal -->
+    <main>
+        <div class="contenedor">
+            <!-- Columna izquierda (75%) con Acerca de Nosotros -->
+            <section id="acerca" class="izquierda">
+                <h2>Acerca de Nosotros</h2>
+                <p>Somos la Iglesia del Nazareno Belén, una comunidad comprometida con el seguimiento de Cristo y con el servicio a nuestra comunidad. Nos enfocamos en compartir el amor de Dios, ayudar a los necesitados, y fomentar la unidad espiritual.</p>
+                <p>Visítanos en nuestras reuniones y forma parte de esta familia en la fe. ¡Te esperamos con los brazos abiertos!</p>
+            </section>
+
+            <!-- Columna derecha (25%) con Programa y Anuncios -->
+            <aside class="derecha">
+                <!-- Programa del Domingo -->
+                <section id="programa">
+                   <h2>Programa del Domingo</h2>
+                   <ul id="lista-programa">
+                        <!-- Los datos del programa se cargarán aquí -->
+                   </ul>
+                </section>
+
+                <!-- Anuncios -->
+                <section id="anuncios">
+                  <h2>Anuncios</h2>
+                  <ul id="lista-anuncios">
+                      <!-- Los anuncios se cargarán aquí -->
+                  </ul>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-contenido">
+            <p>Síguenos en nuestras redes sociales:</p>
+            <div class="redes-sociales">
+                <a href="https://www.facebook.com/idnbelen/" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <!-- <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a> -->
+                <a href="https://youtube.com/@iglesiadelnazarenobelen?si=DL3NUe-65bA06nGa" target="_blank" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      // Función para cargar los datos desde la API de Google Sheets
+      fetch('https://script.google.com/macros/s/AKfycbzhq_juWtnwmC-iLivHMLqfjmZJYnkonR956lBA-NUKdCm_smYDgsdoLEO_1dg3sGuRVQ/exec')
+        .then(response => response.json())
+        .then(data => {
+          // Cargar el programa
+          const programaList = document.getElementById('lista-programa');
+          data.programa.forEach(item => {
+            let li = document.createElement('li');
+            li.textContent = `${item[0]} - ${item[1]}`; // Combina el nombre y la hora del programa
+            programaList.appendChild(li);
+          });
+
+          // Cargar los anuncios
+          const anunciosList = document.getElementById('lista-anuncios');
+          data.anuncios.forEach(item => {
+            let li = document.createElement('li');
+            li.textContent = `${item[0]} - ${item[1]}`; // Combina el nombre y la descripción del anuncio
+            anunciosList.appendChild(li);
+          });
+        })
+        .catch(error => console.error('Error al cargar los datos:', error));
+    </script>
+  <script>
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const menu = document.getElementById('menu');
+
+    hamburgerBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>

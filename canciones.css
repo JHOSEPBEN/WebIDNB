@@ -1,0 +1,211 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FDF6F0; /* Fondo cálido */
+    color: #333;
+}
+
+/* Barra de navegación */
+header {
+    background-color: #FFEBDB; /* Un color pastel cálido */
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #5B5B5B;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Contenedor principal de canciones */
+#canciones-container {
+    margin-top: 80px; /* Espacio debajo de la barra de navegación */
+    padding: 20px;
+    max-width: 80%;
+    background: #FFFFFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Estilo de cada canción */
+.cancion {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #F9E4D4;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cancion h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cancion p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+}
+footer {
+    background-color: #FFEBDB; /* Color pastel cálido */
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+.footer-contenido {
+    margin: 0 auto;
+    color: #333;
+}
+
+.footer-contenido p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.redes-sociales a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 1.5em;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.redes-sociales a:hover {
+    color: #FF5722; /* Color de hover */
+}
+
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #canciones-container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .cancion h2 {
+        font-size: 1.5rem;
+    }
+
+    .cancion p {
+        font-size: 1rem;
+    }
+}
+/* Menú de navegación */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+#menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#menu li {
+    margin: 0 15px;
+}
+
+#menu li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#menu li a.active,
+#menu li a:hover {
+    background-color: #f8f8f8;
+    color: #000000;
+    border-radius: 3px;
+}
+
+/* Ocultar el menú en dispositivos pequeños */
+.hidden {
+    display: none;
+}
+
+/* Botón de hamburguesa */
+#hamburger-btn {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsividad: menú de hamburguesa */
+@media (max-width: 768px) {
+    #menu {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #FFEBDB;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    #menu.hidden {
+        display: none;
+    }
+
+    #hamburger-btn {
+        display: block;
+    }
+}
+
+/* Ajustar diseño de canciones */
+.container {
+    max-width: 100%; /* Ocupa todo el ancho */
+    padding: 1.5rem;
+}
+
+.lyric-line {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}

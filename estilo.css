@@ -1,0 +1,311 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #e3f2fd; /* Fondo azul claro */
+    color: #333;
+    text-align: justify;
+
+}
+body{
+    transition: background-color 0.3s, color 0,3s;
+}
+.modo-oscuro{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.modo-oscuro :hover{
+    background-color: #555;
+}
+
+header.titulo{
+    background: #1976d2; /* Azul más intenso */
+    color: #ffffff;
+    padding: 70px ;
+    text-align: center;
+    top: 70px;
+    font-size: 40px;
+}
+
+header {
+    background: #1976d2; /* Azul más intenso */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    
+    
+}
+
+/* Menú de navegación */
+nav {
+    background-color: #1976d2;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Asegura que los elementos se ajusten en pantallas pequeñas */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+/* Icono de menú hamburguesa */
+.hamburguesa {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+/* Menú oculto para pantallas pequeñas */
+nav ul.oculto {
+    display: none;
+    flex-direction: column; /* Pone los elementos en una columna */
+    text-align: center;
+    background-color: #1976d2;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+}
+
+/* Mostrar menú cuando esté activo */
+nav ul.mostrar {
+    display: flex;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hamburguesa {
+        display: block;
+    }
+
+    nav ul {
+        display: none; /* Oculta el menú por defecto */
+        flex-direction: column;
+    }
+
+    nav ul.mostrar {
+        display: flex;
+    }
+}
+
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffcc00; /* Color amarillo al pasar el mouse */
+}
+
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto; /* Centra el contenido */
+}
+
+section {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h2 {
+    color: #1976d2; /* Color de los títulos de las secciones */
+    margin-bottom: 10px;
+    text-align: center;
+    transition: color 0.3s ease;
+    
+}
+
+h2 :hover{
+    color: yellow;
+
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #1976d2; /* Azul más intenso */
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilo para listas dentro de secciones */
+section ul {
+    list-style-type: disc;
+    padding-left: 20px; /* Sangría para la lista */
+}
+
+/* Estilo para enlaces dentro de secciones */
+section a {
+    color: #1976d2; /* Color azul para enlaces dentro de las secciones */
+    text-decoration: underline; /* Subrayado */
+}
+
+section a:hover {
+    color: #ffcc00; /* Amarillo al pasar el mouse */
+}
+/* img{
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    text-align: justify;
+} */
+.qr{
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+
+}
+div img{
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    text-align: left;
+}
+div img {
+width: 300px;
+height: 200px;
+object-fit: cover;
+border-radius: 10px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer;
+}
+
+div img:hover{
+    transform: scale(1.2);
+    box-shadow: 0 18px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.oscuro {
+    background-color: #423e3e;
+    color: #f0f0f0;
+}
+
+body.oscuro section {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+/* Estilo general de la sección */
+#contacto {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    color: #333;
+    border-top: 3px solid #007bff;
+}
+
+/* Encabezado */
+#contacto h2 {
+    font-size: 2rem;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Formulario */
+#formularioContacto {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#formularioContacto label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+#formularioContacto input,
+#formularioContacto textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#formularioContacto button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#formularioContacto button:hover {
+    background-color: #0056b3;
+}
+
+/* Información adicional */
+.info-contacto {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+.info-contacto a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.info-contacto a:hover {
+    text-decoration: underline;
+}
